@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: import.meta.env.VITE_API_URL })
+const API = axios.create({ baseURL: import.meta.env.VITE_API_URL });
 
-export const registerUser = (data) => axios.post(`${API_URL}/register`, data);
-export const selectPlan = (data) => axios.post(`${API_URL}/select-plan`, data);
-export const simulateTrigger = (data) => axios.post(`${API_URL}/trigger-event`, data);
-export const getDashboard = (userId) => axios.get(`${API_URL}/dashboard/${userId}`);
+export const registerUser = (data) => API.post('/register', data);
+export const selectPlan = (data) => API.post('/select-plan', data);
+export const simulateTrigger = (data) => API.post('/trigger-event', data);
+export const getDashboard = (userId) => API.get(`/dashboard/${userId}`);
