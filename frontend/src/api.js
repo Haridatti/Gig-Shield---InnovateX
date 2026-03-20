@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API = axios.create({ baseURL: import.meta.env.VITE_API_URL })
 
 export const registerUser = (data) => axios.post(`${API_URL}/register`, data);
 export const selectPlan = (data) => axios.post(`${API_URL}/select-plan`, data);
